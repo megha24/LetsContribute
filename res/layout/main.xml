@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="fill_parent"
     >
     <TextView
@@ -14,6 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:hint="Enter your name"
             android:ems="10"
             android:inputType="textPersonName" />
     <TextView
@@ -27,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:ems="10"
+            android:hint="Enter your Blood Group"
             android:inputType="text" />
 
 
@@ -40,6 +48,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Enter your Contact number"
             android:inputType="textPhonetic" />
     <TextView
             android:layout_width="fill_parent"
@@ -52,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:ems="10"
+            android:hint="Enter your address"
             android:inputType="textMultiLine" />
     <Button
             android:id="@+id/addDetailButton"
@@ -64,3 +74,4 @@
 
 </LinearLayout>
 
+</ScrollView>

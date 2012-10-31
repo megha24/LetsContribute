@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import com.example.db.DatabaseRepository;
 import com.example.model.Person;
 
@@ -15,7 +14,7 @@ public class ContactDetailActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.register_details);
         dbRepository = new DatabaseRepository(this);
     }
     public void setDbRepository(DatabaseRepository dbRepository){

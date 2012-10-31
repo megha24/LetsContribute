@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"  >
+    <Button
+            android:id="@+id/register"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="register"
+            android:text="Register As Donor"/>
+    <Button
+            android:id="@+id/find_donor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="find"
+            android:text="Find Donor"/>
+
+</LinearLayout>

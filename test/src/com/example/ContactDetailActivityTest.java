@@ -20,7 +20,7 @@ public class ContactDetailActivityTest extends ActivityInstrumentationTestCase2<
     private DatabaseRepositoryStub dbRepository;
 
     public ContactDetailActivityTest() {
-        super("com.example", ContactDetailActivity.class);
+        super(ContactDetailActivity.class);
     }
 
     @Override

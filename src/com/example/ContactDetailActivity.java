@@ -1,6 +1,7 @@
 package com.example;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,5 +30,7 @@ public class ContactDetailActivity extends Activity
         String bloodGroup =  ((EditText)findViewById(R.id.bloodGroup)).getText().toString();
         System.out.println("Submitting to the repository");
         dbRepository.addPerson(new Person(personName,contactNumber,address,bloodGroup));
+        Intent thankYouActivity = new Intent(this, ThankYouActivity.class);
+        startActivity(thankYouActivity);
     }
 }

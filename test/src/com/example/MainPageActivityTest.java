@@ -1,6 +1,5 @@
 package com.example;
 
-import android.R;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
@@ -27,6 +26,7 @@ public class MainPageActivityTest extends ActivityInstrumentationTestCase2<MainP
 
         Activity nextActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertEquals(nextActivity.getClass(), ContactDetailActivity.class);
+        nextActivity.finish();
 
     }
 

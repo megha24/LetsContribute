@@ -6,19 +6,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import com.example.stub.DatabaseRepositoryStub;
 import com.example.utils.TestUtilities;
 
-/**
- * This is a simple framework for a test of an Application.  See
- * {@link android.test.ApplicationTestCase ApplicationTestCase} for more information on
- * how to write and extend Application tests.
- * <p/>
- * To run this test, you can type:
- * adb shell am instrument -w \
- * -e class com.example.ContactDetailActivityTest \
- * com.example.tests/android.test.InstrumentationTestRunner
- */
-public class ContactDetailActivityTest extends ActivityInstrumentationTestCase2<ContactDetailActivity> {
+public class ContactDetailActivityTest extends BaseActivityTest<ContactDetailActivity> {
 
-    private ContactDetailActivity activity;
     private DatabaseRepositoryStub dbRepository;
 
     public ContactDetailActivityTest() {
@@ -27,8 +16,7 @@ public class ContactDetailActivityTest extends ActivityInstrumentationTestCase2<
 
     @Override
     protected void setUp() throws Exception {
-        super.setUp();    //To change body of overridden methods use File | Settings | File Templates.
-        activity = getActivity();
+        super.setUp();
         dbRepository = new DatabaseRepositoryStub(activity);
         activity.setDbRepository(dbRepository);
     }
@@ -48,21 +36,15 @@ public class ContactDetailActivityTest extends ActivityInstrumentationTestCase2<
 
     }
     public void testShouldDisplayThankYOuActivity(){
-        Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(ThankYouActivity.class.getName(), null, false);
         TestUtilities.setEditText(R.id.address,"someAddress",activity,this);
         TestUtilities.setEditText(R.id.personName,"someName",activity,this);
         TestUtilities.setEditText(R.id.contactNumber,"someNumber",activity,this);
         TestUtilities.setEditText(R.id.bloodGroup, "O+", activity, this);
-        TestUtilities.clickButton(R.id.addDetailButton, activity, this);
-        Activity nextActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertEquals(nextActivity.getClass(), ThankYouActivity.class);
-        nextActivity.finish();
-
+        assertNavigationToTarget(R.id.addDetailButton,ThankYouActivity.class);
     }
 
     @Override
     public void tearDown() throws Exception {
         super.tearDown();
-        //activity.finish();
     }
 }
